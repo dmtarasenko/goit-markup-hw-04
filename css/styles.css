@@ -10,7 +10,6 @@
 body {
   font-family: 'Roboto', sans-serif;
   color: var(--main-text-color);
-  width: 1600px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -46,7 +45,8 @@ ul {
 .filter-list,
 .projects-list,
 .social-link-list,
-.clients-list {
+.clients-list,
+.footer-social-link-list {
   list-style-type: none;
 }
 .filter-btn,
@@ -166,11 +166,15 @@ header .second-part-logo {
   margin-right: 10px;
   fill: currentColor;
 }
+
 /* MAIN */
 /* MAIN-HERO */
 .hero {
   padding-top: 200px;
   padding-bottom: 200px;
+  min-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #2f303a;
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);
   background-position: center;
@@ -189,7 +193,6 @@ header .second-part-logo {
   margin-left: auto;
   margin-right: auto;
 }
-
 .hero-btn {
   display: block;
   cursor: pointer;
@@ -268,6 +271,7 @@ header .second-part-logo {
 .works-list > .works-item:not(:last-child) {
   margin-right: 30px;
 }
+
 /* MAIN-TEAM */
 .team {
   text-align: center;
@@ -313,28 +317,26 @@ header .second-part-logo {
   justify-content: center;
   margin-top: 16px;
 }
-.social-link {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  fill: #afb1b8;
-}
 .social-link-item:not(:last-child) {
   margin-right: 10px;
 }
-.social-link-item {
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 44px;
   height: 44px;
   border-radius: 50%;
 }
-.social-link-item:hover,
-.social-link-item:focus {
+.social-link:hover,
+.social-link:focus {
   background-color: var(--active-color);
 }
-.social-link-item:hover .social-link,
-.social-link-item:focus .social-link {
+.social-link-icon {
+  fill: #afb1b8;
+}
+.social-link:hover .social-link-icon,
+.social-link:focus .social-link-icon {
   fill: #ffffff;
 }
 .team-description {
@@ -360,29 +362,29 @@ header .second-part-logo {
   display: flex;
   justify-content: center;
 }
-.clients-item {
+.clients-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.clients-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 170px;
   height: 92px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
 }
-.clients-item:hover,
-.clients-item:focus,
-.clients-item:hover .clients-link,
-.clients-item:focus .clients-link {
-  fill: var(--active-color);
+.clients-link:hover,
+.clients-link:focus {
   border-color: var(--active-color);
 }
-.clients-link {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.clients-link-icon {
   fill: #afb1b8;
 }
-.clients-item:not(:last-child) {
-  margin-right: 30px;
+.clients-link:hover .clients-link-icon,
+.clients-link:focus .clients-link-icon {
+  fill: var(--active-color);
 }
 
 /* FOOTER */
@@ -398,6 +400,7 @@ header .second-part-logo {
 .container-address {
   margin-right: 70px;
 }
+
 /* FOOTER-LOGO */
 footer .second-part-logo {
   color: #ffffff;
@@ -437,12 +440,30 @@ footer .phone-link {
   color: #ffffff;
   margin-bottom: 20px;
 }
-footer .social-link-item {
+.footer-social-link-list {
+  display: flex;
+  justify-content: center;
+}
+.footer-social-link-item:not(:last-child) {
+  margin-right: 10px;
+}
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
 }
-footer .social-link {
+.footer-social-link:hover,
+.footer-social-link:focus {
+  background-color: var(--active-color);
+}
+.footer-social-link-icon {
   fill: #ffffff;
 }
+
 /* PORTFOLIO */
 /* MAIN */
 /* OUR PORTFOLIO */
@@ -493,7 +514,8 @@ footer .social-link {
 .projects-link {
   display: block;
 }
-.projects-link:hover {
+.projects-link:hover,
+.projects-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .project-description {
